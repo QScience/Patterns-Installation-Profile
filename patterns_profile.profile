@@ -367,7 +367,7 @@ function patterns_profile_form_submit($form, &$form_state) {
     $pattern->pattern['actions'][] = array('tag' => 'pattern', 'value' => $p);
   }
   //include (drupal_get_path('module', 'patterns') . '/patterns.module');
-  patterns_start_engine($pattern);
+  patterns_start_engine($pattern, array('run-subpatterns' => TRUE));
   //patterns_execute_pattern($pattern);
   variable_set('patterns_profile_executed', TRUE);
   $form_state['redirect'] = variable_get('patterns_profile_redirect_url', '');
