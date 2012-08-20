@@ -6,6 +6,13 @@
  */
  
 /**
+ * Implements <hook_patterns_directory>
+ */ 
+function qscience_profile_patterns_directory() {
+  return drupal_get_path('profile', 'qscience_profile') . '/patterns/';
+}
+
+/**
 * Return an array of the modules to be enabled when this profile is installed.
 *
 * @return
@@ -38,8 +45,19 @@ function patterns_profile_profile_modules() {
     'color', 'comment', 'help', 'menu', 'taxonomy', 'dblog',
 
     // modules required by patterns
+<<<<<<< HEAD:patterns_profile.profile
     'patterns', 'token', 'libraries',
 
+=======
+    'patterns', 
+    'patterns_components', 
+    'patterns_yamlparser', 
+    'patterns_xmlparser',
+    'patterns_phpparser',
+    'token',
+    'libraries',
+    'macro',
+>>>>>>> a398143... bug fixing. a patterns directory is added with an example pattern:qscience_profile.profile
   );
 }
 
@@ -142,8 +160,13 @@ function patterns_profile_install_tasks() {
  *   modify the $task, otherwise discarded.
  */
 /* TODO: how to get this function called? */
+<<<<<<< HEAD:patterns_profile.profile
 function patterns_profile_profile_tasks(&$task, $url) {
   variable_set('patterns_profile_redirect_url', $url);
+=======
+function qscience_profile_profile_tasks(&$task, $url) {
+  variable_set('qscience_profile_redirect_url', $url);
+>>>>>>> a398143... bug fixing. a patterns directory is added with an example pattern:qscience_profile.profile
 
   if ($task == 'profile') {
     // Insert default user-defined node types into the database. For a complete
