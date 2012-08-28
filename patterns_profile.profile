@@ -45,10 +45,6 @@ function patterns_profile_profile_modules() {
     'color', 'comment', 'help', 'menu', 'taxonomy', 'dblog',
 
     // modules required by patterns
-<<<<<<< HEAD:patterns_profile.profile
-    'patterns', 'token', 'libraries',
-
-=======
     'patterns', 
     'patterns_components', 
     'patterns_yamlparser', 
@@ -57,7 +53,6 @@ function patterns_profile_profile_modules() {
     'token',
     'libraries',
     'macro',
->>>>>>> a398143... bug fixing. a patterns directory is added with an example pattern:qscience_profile.profile
   );
 }
 
@@ -160,13 +155,8 @@ function patterns_profile_install_tasks() {
  *   modify the $task, otherwise discarded.
  */
 /* TODO: how to get this function called? */
-<<<<<<< HEAD:patterns_profile.profile
 function patterns_profile_profile_tasks(&$task, $url) {
   variable_set('patterns_profile_redirect_url', $url);
-=======
-function qscience_profile_profile_tasks(&$task, $url) {
-  variable_set('qscience_profile_redirect_url', $url);
->>>>>>> a398143... bug fixing. a patterns directory is added with an example pattern:qscience_profile.profile
 
   if ($task == 'profile') {
     // Insert default user-defined node types into the database. For a complete
@@ -273,11 +263,6 @@ function patterns_profile_form_alter_old(&$form, $form_state, $form_id) {
 	}
 }
 
-<<<<<<< HEAD:patterns_profile.profile
-function patterns_profile_form($form, &$form_state, $url) {
-
-  $patterns = _patterns_io_get_patterns(true);
-=======
 function qscience_profile_form($form, &$form_state, $url) {
 	
 	$enable = array();
@@ -300,7 +285,6 @@ function qscience_profile_form($form, &$form_state, $url) {
 	}
 	
   $patterns = _patterns_io_get_patterns(true, false);
->>>>>>> eb15590... manually enabling submodules:qscience_profile.profile
   $patterns = $patterns[PATTERNS_STATUS_OK];
   // TODO: show a list similar to the Patterns List page.
   $options = array();
