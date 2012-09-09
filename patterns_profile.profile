@@ -9,7 +9,7 @@
  * Implements <hook_patterns_directory>
  */ 
 function qscience_profile_patterns_directory() {
-  return drupal_get_path('profile', 'qscience_profile') . '/patterns/';
+  return drupal_get_path('profile', 'patterns_profile') . '/patterns/';
 }
 
 /**
