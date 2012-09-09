@@ -8,7 +8,7 @@
 /**
  * Implements <hook_patterns_directory>
  */ 
-function qscience_profile_patterns_directory() {
+function patterns_profile_patterns_directory() {
   return drupal_get_path('profile', 'patterns_profile') . '/patterns/';
 }
 
@@ -263,7 +263,7 @@ function patterns_profile_form_alter_old(&$form, $form_state, $form_id) {
 	}
 }
 
-function qscience_profile_form($form, &$form_state, $url) {
+function patterns_profile_form($form, &$form_state, $url) {
 	
 	$enable = array();
 	// Hack because <hook_profile_modules> does not enable submodules
